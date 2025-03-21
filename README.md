@@ -23,26 +23,25 @@ Provision and deploy resources: bash azd up
 Copy the deployed app URL shown in the output.
 
 ## Step 4: Explore and Modify the App
-
-### Task 1: Change the AI Agent's Personality
-Open /src/agents/agent.ts
-Find and change: ts const systemMessage = "You are a helpful assistant."; To: ts const systemMessage = "You are a fitness coach who provides workout tips and motivation.";
-Save and redeploy: bash azd deploy
-
-### Task 2: Add a Custom Command (e.g., Jokes)
-In /src/agents/agent.ts, add: ts if (userInput.toLowerCase().includes("joke")) { return "Why did the developer go broke? Because they used up all their cache!"; }
-Save and redeploy.
-
-### Task 3: Customize the Web UI
-Open /src/web/app/pages/index.tsx
-Change heading and button: ```tsx
-Welcome to Your Personal AI Buddy!
-<button className="bg-blue-500 text-white">Chat Now</button> 3. Save and preview:bash npm run dev 4. Redeploy:bash azd deploy ```
-
-### Task 4: Add Input Field for Agent Name
-In /src/web/app/pages/index.tsx, add: ```tsx const [agentName, setAgentName] = useState("AI Buddy"); <input type="text" value={agentName} onChange={(e) => setAgentName(e.target.value)} placeholder="Enter your AI's name" className="border p-2 rounded" />
-{agentName} is ready to chat!
-``` 2. Save and redeploy.
+  ### Task 1: Change the AI Agent's Personality
+  Open /src/agents/agent.ts
+  Find and change: ts const systemMessage = "You are a helpful assistant."; To: ts const systemMessage = "You are a fitness coach who provides workout tips and       motivation.";
+  Save and redeploy: bash azd deploy
+  
+  ### Task 2: Add a Custom Command (e.g., Jokes)
+  In /src/agents/agent.ts, add: ts if (userInput.toLowerCase().includes("joke")) { return "Why did the developer go broke? Because they used up all their cache!"; }
+  Save and redeploy.
+  
+  ### Task 3: Customize the Web UI
+  Open /src/web/app/pages/index.tsx
+  Change heading and button: ```tsx
+  Welcome to Your Personal AI Buddy!
+  <button className="bg-blue-500 text-white">Chat Now</button> 3. Save and preview:bash npm run dev 4. Redeploy:bash azd deploy ```
+  
+  ### Task 4: Add Input Field for Agent Name
+  In /src/web/app/pages/index.tsx, add: ```tsx const [agentName, setAgentName] = useState("AI Buddy"); <input type="text" value={agentName} onChange={(e) => setAgentName(e.target.value)} placeholder="Enter your AI's name" className="border p-2 rounded" />
+  {agentName} is ready to chat!
+  ``` 2. Save and redeploy.
 
 ## Step 5: Test Your App
 Visit the Azure Web App URL from deployment.
@@ -52,3 +51,7 @@ Monitor logs: bash azd monitor
 ## Step 6: Clean Up (Optional)
 azd down
 Happy coding!
+
+
+
+
